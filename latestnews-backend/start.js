@@ -6,7 +6,6 @@ const app = require('./app')
 const port = 3080;
 
 mongoose.connect(
-  //  "mongodb+srv://raccoon:raccoon@cluster0.41lgk.mongodb.net/latestNews",
   process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
