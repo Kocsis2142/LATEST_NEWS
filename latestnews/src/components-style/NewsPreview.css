@@ -1,0 +1,240 @@
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f5f5f5; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(173, 173, 173); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(146, 146, 146); 
+  }
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: unset;
+}
+a:visited {
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: unset;
+}
+a:hover {
+    color: rgb(158, 158, 158);
+}
+
+.NewsPreview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.NewsPreview > ul {
+    max-width: 1600px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 2px;
+    list-style: none;
+}
+
+.NewsPreview > ul > li {
+    color: rgb(240, 240, 240);
+    background-color: rgb(50, 50, 50);
+    height: 540px;
+    margin: 2px;
+    padding: 0;
+    animation: translateX 1s linear;
+}
+
+@keyframes translateX {
+    0% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    
+    80% {
+      transform: translateX(-5px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+.NewsPreview > ul > li > .NewsCard {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.NewsPreview > ul > li > .NewsCardOnPrev {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+    animation: overFlow 0.7s linear;
+}
+
+@keyframes overFlow {
+  0% {
+    overflow: hidden;
+  }
+  99% {
+    overflow: hidden;
+  }
+  100% {  
+    overflow: auto;
+  }
+}
+
+.NewsPreview > ul > li > .NewsCard > div {
+    animation: translateYback 0.7s linear;
+}
+
+.NewsPreview > ul > li > .NewsCardOnPrev > div {
+    z-index: 1;
+    animation: translateY 0.7s linear;
+    background-color: rgba(80, 5, 60, 0.6);
+    height: 100%;
+    padding: 10px 10px 0 10px;
+}
+
+.NewsPreview > ul > li > .NewsCardOnPrev > div > a {
+    font-size: 22px;
+}
+
+.NewsPreview > ul > li > .NewsCardOnPrev > div > h5 {
+    font-size: 18px;
+    padding-bottom: 6px;
+}
+
+.NewsPreview > ul > li > .NewsCardOnPrev > div > p {
+    padding: 0 20px 0 20px;
+    font-size: larger;
+}
+
+.NewsPreview > ul > li > .NewsCardOnPrev > div > a:nth-child(2) {
+    font-size: small;
+    font-weight: 200;
+}
+
+@keyframes translateY {
+    0% {
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    80% {
+      pointer-events: none;
+      transform: translateY(0px);
+    }
+  
+    100% {  
+      pointer-events: unset;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+@keyframes translateYback {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    
+    80% {
+      transform: translateY(0px);
+    }
+  
+    100% {  
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+.NewsPreview > ul > li:nth-child(even) > div > div > h1 {
+    font-size: 16px;
+}
+
+.NewsCard > div:nth-child(1) {
+    background-color: rgba(80, 5, 60, 0.6);
+    padding: 10px 14px 10px 14px;
+}
+
+.NewsCard > div > h1 {
+    font-size: 22px;
+}
+
+.NewsCard > div > h3 {
+    font-size: 14px;
+    background-color: rgba(50, 50, 50, 0.4);
+    padding: 6px;
+}
+
+.NewsCard > div > h5 {
+    font-size: 12.5px;
+    background-color: rgba(50, 50, 50, 0.4);
+    padding: 4px 4px 8px 12px;
+}
+
+.loaderCard {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: 600;
+}
+
+.loader {
+    margin: auto;
+    border: 10px solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 15px solid rgba(80, 5, 60, 0.8);
+    width: 100px;
+    height: 100px;
+    animation: spinner 1s linear infinite;
+  }
+  
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @media screen and (max-width: 1200px) {
+      .NewsPreview > ul {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+      .NewsPreview > ul > li:nth-child(even) > div > div > h1 {
+        font-size: 22px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+      .NewsPreview > ul > li {
+        height: 380px;
+        }
+  }

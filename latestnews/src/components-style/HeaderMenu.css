@@ -1,0 +1,183 @@
+.HeaderMenu-Outline {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: rgb(218,68,83);
+    background: linear-gradient(90deg, rgba(218,68,83,1) 0%, rgba(137,33,107,1) 100%);
+}
+
+.HeaderMenu {
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.HeaderMenu > div > ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.HeaderMenu > div > ul > li {
+    cursor: pointer;
+    color: rgb(230, 230, 230);
+    font-size: 18px;
+    margin: 6px 8px 6px 8px;
+}
+
+.HeaderMenu > div > ul > li:hover {
+    color: rgb(158, 158, 158);
+}
+
+.HeaderMenu > div > ul > .lsLogo {
+    cursor: pointer;
+    margin: 0 15px 0 10px;
+}
+
+.HeaderMenu > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px 0 20px;
+}
+
+.HeaderMenu > div > input {
+    margin: 6px;
+}
+
+.HeaderMenu > div:nth-child(1) {
+    display: none;
+}
+
+.HeaderMenu > div > ul > li > img {
+    width: 45px;
+}
+
+.SearchIcon {
+    color: rgb(230, 230, 230);
+    font-size: 20px;
+    z-index: 2;
+    cursor: pointer;
+    padding: 0 4px 0 4px;
+}
+
+.SearchIcon:hover {
+    color: rgb(158, 158, 158);
+}
+
+.SearchBar {
+    font-size: 18px;
+    background-color: transparent;
+    color: rgba(230, 230, 230);
+    padding: 0 4px 0 4px;
+    border: none;
+    outline: none;
+    border-bottom: solid rgb(230, 230, 230) 1px;
+    animation: translateX 0.2s linear;
+  }
+
+  @keyframes translateX {
+    0% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    
+    80% {
+      transform: translateX(-5px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+.SearchBar:focus {
+    outline: none;
+}
+
+.SearchBar::placeholder {
+    color: rgba(230, 230, 230, 0.8);
+    font-size: 16px;
+    padding: 4px;
+}
+
+.HeaderMenu > div > .smallScreen > li {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .HeaderMenu {
+        position: relative;
+        min-height: 58px;
+    }
+    .HeaderMenu > div > * {
+       margin: 2px 0 6px 0;
+    }
+    .HeaderMenu > div > ul > li {
+        display: none;
+    }
+    .HeaderMenu > div > ul > .lsLogo {
+        display: unset;
+    }
+    .HeaderMenu > div > ul > li > img {
+        width: 30px;
+    }
+    .HeaderMenu > div:nth-child(1) {
+        display: unset;
+    }
+    .HeaderMenu > div:nth-child(2) {
+        padding-top: 10px;
+    }
+    .HeaderMenu > div > ul > .hamburgerMenuBtn {
+        padding-top: 2px;
+        font-size: 26.4px;
+        display: unset;
+    }
+    .SearchBar {
+        max-width: 140px;
+        position: absolute;
+        right: 56px;
+    }
+
+    .HeaderMenu > div > .smallScreen > li {
+        display: unset;
+    }
+    .HeaderMenu > div > .smallScreen {
+        padding: 5px 0 10px 0;
+        z-index: 2;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        background: linear-gradient(90deg, rgba(218,68,83,1) 0%, rgba(137,33,107,1) 100%);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        animation: transY 0.6s linear;
+    }
+    @keyframes transY {
+        0% {
+          pointer-events: none;
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        
+        80% {
+          pointer-events: none;
+          transform: translateY(0px);
+        }
+      
+        100% {  
+          pointer-events: unset;
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+}
+
+@media screen and (max-width: 500px) {
+    .HeaderMenu > div:nth-child(2) > .largeScreen > .lsLogo {
+        display: none;
+    }
+}
