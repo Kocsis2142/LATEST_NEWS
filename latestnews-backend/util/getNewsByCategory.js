@@ -6,7 +6,7 @@ const getNewsByCategory = async (category) => {
   let filteredData = []
   let NewsModel = mongoose.model(category, NewsSchema)
     try {
-      const response = await axios.get(`https://newsapi.org/v2/top-headlines?category=${category}&pageSize=100&country=us&apiKey=0223bf97730b4dbd91688e3b40f202be`)
+      const response = await axios.get(`https://newsapi.org/v2/top-headlines?category=${category}&pageSize=100&country=us&apiKey=${process.env.NEWS_API_KEY}`)
       NewsModel.find({}, (err, newsData) => {
           filteredData = response.data.articles.filter((array_el) => {
           return newsData.filter((anotherOne_el) => {
